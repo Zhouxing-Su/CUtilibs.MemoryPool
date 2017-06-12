@@ -52,7 +52,7 @@ void testMonotonicMemoryPool(Ptr *list) {
     MonotonicMemoryPool *mmp;
 
     begin = clock();
-    mmp = MonotonicMemoryPool_new(toByte(0, 256, 0, 0));
+    mmp = MonotonicMemoryPool_new(toByte(0, 0, 64, 0));
     for (i = 0; i < BlockNum; ++i) {
         list[i] = MonotonicMemoryPool_alloc(mmp, BlockSize);
     }

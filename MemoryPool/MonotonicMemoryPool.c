@@ -24,7 +24,7 @@ void MemoryPage_delete(MemoryPage *mp) {
 void MemoryPage_delete_recursive(MemoryPage *mp) {
     MemoryPage *prev = mp->prev;
     MemoryPage_delete(mp);
-    if (prev != NULL) { MemoryPage_delete(prev); }
+    if (prev != NULL) { MemoryPage_delete_recursive(prev); }
 }
 
 
