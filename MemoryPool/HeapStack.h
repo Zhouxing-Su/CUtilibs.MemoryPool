@@ -24,6 +24,9 @@ void HeapStack_delete(HeapStack *hs);
 
 void HeapStack_resize(HeapStack *hs, Size size);
 
+// TODO[szx][0]: the pointer will be invalidated after resize.
+//               return an offset to `pool` address as a handle instead!
+//               and add an interface like `deref(pool, handle)` to get the real address.
 // get a memory block from the pool.
 Ptr HeapStack_alloc(HeapStack *hs, Size size);
 Ptr HeapStack_push(HeapStack *hs, Size size);
